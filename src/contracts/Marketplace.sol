@@ -35,7 +35,7 @@ contract Marketplace {
 
     function createProduct(string memory _name, uint _price) public {
         // require a valid name
-        require(bytes(_name).lenght > 0);
+        require(bytes(_name).length > 0);
         // require a valid price
         require(_price > 0);
         // increment product count
@@ -43,22 +43,22 @@ contract Marketplace {
         // create the product
         products[productCount] = Product(productCount, _name, _price, msg.sender, false);
         // trigger an event
-        emit ProductCreated(productCount, _name, _price, msg.sender, false)
+        emit ProductCreated(productCount, _name, _price, msg.sender, false);
     }
 
     function purchaseProduct(uint _id) public payable {
         // fetch the product
-        Product memory _product = products[id];
+        Product memory _product = products[_id];
         // fetch the owner
-        address payable _seller = product.owner;
+        address payable _seller = _product.owner;
         // make sure the product has a valid id
-        require(_product.id > && _product.id <= productCount);
+        require(_product.id > 0 && _product.id <= productCount);
         // require that there is enough Ether in the transaction
         require(msg.value >= _product.price);
         // require that the product has not been purchased already
         require(!_product.purchased);
         // require that the buyer is not the seller
-        require(seller != msg.sender);
+        require(_seller != msg.sender);
         // transfer ownership to the buyer
         _product.owner = msg.sender;
         // mark as purchased
