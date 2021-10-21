@@ -17,6 +17,57 @@
       "signature": "0x06fdde03"
     },
     {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "products",
+      "outputs": [
+        {
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "price",
+          "type": "uint256"
+        },
+        {
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "name": "purchased",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0x7acc0b20"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "productCount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0xe0f6ef87"
+    },
+    {
       "inputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
@@ -24,20 +75,20 @@
       "signature": "constructor"
     }
   ],
-  "bytecode": "0x608060405234801561001057600080fd5b506040805190810160405280601b81526020017f4461707020556e6976657273697479204d61726b6574706c61636500000000008152506000908051906020019061005c929190610062565b50610107565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100a357805160ff19168380011785556100d1565b828001600101855582156100d1579182015b828111156100d05782518255916020019190600101906100b5565b5b5090506100de91906100e2565b5090565b61010491905b808211156101005760008160009055506001016100e8565b5090565b90565b6101a0806101166000396000f3fe608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806306fdde0314610046575b600080fd5b34801561005257600080fd5b5061005b6100d6565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561009b578082015181840152602081019050610080565b50505050905090810190601f1680156100c85780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b60008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561016c5780601f106101415761010080835404028352916020019161016c565b820191906000526020600020905b81548152906001019060200180831161014f57829003601f168201915b50505050508156fea165627a7a723058208623a5949421c91749438269c59ec47771f862baf8a13d88c3975053e1d9f8560029",
-  "deployedBytecode": "0x608060405260043610610041576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806306fdde0314610046575b600080fd5b34801561005257600080fd5b5061005b6100d6565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561009b578082015181840152602081019050610080565b50505050905090810190601f1680156100c85780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b60008054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561016c5780601f106101415761010080835404028352916020019161016c565b820191906000526020600020905b81548152906001019060200180831161014f57829003601f168201915b50505050508156fea165627a7a723058208623a5949421c91749438269c59ec47771f862baf8a13d88c3975053e1d9f8560029",
-  "sourceMap": "27:134:0:-;;;82:76;8:9:-1;5:2;;;30:1;27;20:12;5:2;82:76:0;114:36;;;;;;;;;;;;;;;;;;:4;:36;;;;;;;;;;;;:::i;:::-;;27:134;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
-  "deployedSourceMap": "27:134:0:-;;;;;;;;;;;;;;;;;;;;;;;;55:18;;8:9:-1;5:2;;;30:1;27;20:12;5:2;55:18:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;55:18:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity ^0.5.0;\r\n\r\ncontract Marketplace {\r\n    string public name;\r\n\r\n    constructor() public {\r\n        name = \"Dapp University Marketplace\";\r\n    }\r\n}",
-  "sourcePath": "P:/Dani/dappCart/marketplace/src/contracts/Marketplace.sol",
+  "bytecode": "0x6080604052600060015534801561001557600080fd5b506040805190810160405280601b81526020017f4461707020556e6976657273697479204d61726b6574706c616365000000000081525060009080519060200190610061929190610067565b5061010c565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100a857805160ff19168380011785556100d6565b828001600101855582156100d6579182015b828111156100d55782518255916020019190600101906100ba565b5b5090506100e391906100e7565b5090565b61010991905b808211156101055760008160009055506001016100ed565b5090565b90565b6103e28061011b6000396000f3fe608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806306fdde031461005c5780637acc0b20146100ec578063e0f6ef87146101ec575b600080fd5b34801561006857600080fd5b50610071610217565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100b1578082015181840152602081019050610096565b50505050905090810190601f1680156100de5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156100f857600080fd5b506101256004803603602081101561010f57600080fd5b81019080803590602001909291905050506102b5565b60405180868152602001806020018581526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183151515158152602001828103825286818151815260200191508051906020019080838360005b838110156101ad578082015181840152602081019050610192565b50505050905090810190601f1680156101da5780820380516001836020036101000a031916815260200191505b50965050505050505060405180910390f35b3480156101f857600080fd5b506102016103b0565b6040518082815260200191505060405180910390f35b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102ad5780601f10610282576101008083540402835291602001916102ad565b820191906000526020600020905b81548152906001019060200180831161029057829003601f168201915b505050505081565b6002602052806000526040600020600091509050806000015490806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103675780601f1061033c57610100808354040283529160200191610367565b820191906000526020600020905b81548152906001019060200180831161034a57829003601f168201915b5050505050908060020154908060030160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060030160149054906101000a900460ff16905085565b6001548156fea165627a7a7230582035b51ee272d72099292fb437f4310f9b0fa96df0412b53dca8956c7eda5861aa0029",
+  "deployedBytecode": "0x608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806306fdde031461005c5780637acc0b20146100ec578063e0f6ef87146101ec575b600080fd5b34801561006857600080fd5b50610071610217565b6040518080602001828103825283818151815260200191508051906020019080838360005b838110156100b1578082015181840152602081019050610096565b50505050905090810190601f1680156100de5780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156100f857600080fd5b506101256004803603602081101561010f57600080fd5b81019080803590602001909291905050506102b5565b60405180868152602001806020018581526020018473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200183151515158152602001828103825286818151815260200191508051906020019080838360005b838110156101ad578082015181840152602081019050610192565b50505050905090810190601f1680156101da5780820380516001836020036101000a031916815260200191505b50965050505050505060405180910390f35b3480156101f857600080fd5b506102016103b0565b6040518082815260200191505060405180910390f35b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102ad5780601f10610282576101008083540402835291602001916102ad565b820191906000526020600020905b81548152906001019060200180831161029057829003601f168201915b505050505081565b6002602052806000526040600020600091509050806000015490806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103675780601f1061033c57610100808354040283529160200191610367565b820191906000526020600020905b81548152906001019060200180831161034a57829003601f168201915b5050505050908060020154908060030160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16908060030160149054906101000a900460ff16905085565b6001548156fea165627a7a7230582035b51ee272d72099292fb437f4310f9b0fa96df0412b53dca8956c7eda5861aa0029",
+  "sourceMap": "27:362:0:-;;;106:1;80:27;;308:76;8:9:-1;5:2;;;30:1;27;20:12;5:2;308:76:0;340:36;;;;;;;;;;;;;;;;;;:4;:36;;;;;;;;;;;;:::i;:::-;;27:362;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "27:362:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;55:18;;8:9:-1;5:2;;;30:1;27;20:12;5:2;55:18:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;55:18:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;114:40;;8:9:-1;5:2;;;30:1;27;20:12;5:2;114:40:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;114:40:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;114:40:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;80:27;;8:9:-1;5:2;;;30:1;27;20:12;5:2;80:27:0;;;;;;;;;;;;;;;;;;;;;;;55:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;114:40::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;80:27::-;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\r\n\r\ncontract Marketplace {\r\n    string public name;\r\n    int public productCount = 0;\r\n    mapping(uint => Product) public products;\r\n    \r\n    struct Product {\r\n        uint id;\r\n        string name;\r\n        uint price;\r\n        address owner;\r\n        bool purchased;\r\n    }\r\n\r\n    constructor() public {\r\n        name = \"Dapp University Marketplace\";\r\n    }\r\n\r\n}",
+  "sourcePath": "P:/Dani/dappCart/src/contracts/Marketplace.sol",
   "ast": {
-    "absolutePath": "/P/Dani/dappCart/marketplace/src/contracts/Marketplace.sol",
+    "absolutePath": "/P/Dani/dappCart/src/contracts/Marketplace.sol",
     "exportedSymbols": {
       "Marketplace": [
-        12
+        30
       ]
     },
-    "id": 13,
+    "id": 31,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -57,9 +108,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 12,
+        "id": 30,
         "linearizedBaseContracts": [
-          12
+          30
         ],
         "name": "Marketplace",
         "nodeType": "ContractDefinition",
@@ -69,7 +120,7 @@
             "id": 3,
             "name": "name",
             "nodeType": "VariableDeclaration",
-            "scope": 12,
+            "scope": 30,
             "src": "55:18:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -91,27 +142,259 @@
             "visibility": "public"
           },
           {
+            "constant": false,
+            "id": 6,
+            "name": "productCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 30,
+            "src": "80:27:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_int256",
+              "typeString": "int256"
+            },
+            "typeName": {
+              "id": 4,
+              "name": "int",
+              "nodeType": "ElementaryTypeName",
+              "src": "80:3:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_int256",
+                "typeString": "int256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 5,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "106:1:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 10,
+            "name": "products",
+            "nodeType": "VariableDeclaration",
+            "scope": 30,
+            "src": "114:40:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Product_$21_storage_$",
+              "typeString": "mapping(uint256 => struct Marketplace.Product)"
+            },
+            "typeName": {
+              "id": 9,
+              "keyType": {
+                "id": 7,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "122:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "114:24:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Product_$21_storage_$",
+                "typeString": "mapping(uint256 => struct Marketplace.Product)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 8,
+                "name": "Product",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 21,
+                "src": "130:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Product_$21_storage_ptr",
+                  "typeString": "struct Marketplace.Product"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Marketplace.Product",
+            "id": 21,
+            "members": [
+              {
+                "constant": false,
+                "id": 12,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 21,
+                "src": "193:7:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 11,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "193:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 21,
+                "src": "211:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 13,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "211:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 16,
+                "name": "price",
+                "nodeType": "VariableDeclaration",
+                "scope": 21,
+                "src": "233:10:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 15,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "233:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 18,
+                "name": "owner",
+                "nodeType": "VariableDeclaration",
+                "scope": 21,
+                "src": "254:13:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 17,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "254:7:0",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 20,
+                "name": "purchased",
+                "nodeType": "VariableDeclaration",
+                "scope": 21,
+                "src": "278:14:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 19,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "278:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Product",
+            "nodeType": "StructDefinition",
+            "scope": 30,
+            "src": "167:133:0",
+            "visibility": "public"
+          },
+          {
             "body": {
-              "id": 10,
+              "id": 28,
               "nodeType": "Block",
-              "src": "103:55:0",
+              "src": "329:55:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 8,
+                    "id": 26,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 6,
+                      "id": 24,
                       "name": "name",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 3,
-                      "src": "114:4:0",
+                      "src": "340:4:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
                         "typeString": "string storage ref"
@@ -122,14 +405,14 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "4461707020556e6976657273697479204d61726b6574706c616365",
-                      "id": 7,
+                      "id": 25,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "string",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "121:29:0",
+                      "src": "347:29:0",
                       "subdenomination": null,
                       "typeDescriptions": {
                         "typeIdentifier": "t_stringliteral_da4b6052d4e2657e92b9e8ac7ae34efe0016cdd765c6837ed00d7314b2dd8f36",
@@ -137,58 +420,58 @@
                       },
                       "value": "Dapp University Marketplace"
                     },
-                    "src": "114:36:0",
+                    "src": "340:36:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 9,
+                  "id": 27,
                   "nodeType": "ExpressionStatement",
-                  "src": "114:36:0"
+                  "src": "340:36:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 11,
+            "id": 29,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4,
+              "id": 22,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "93:2:0"
+              "src": "319:2:0"
             },
             "returnParameters": {
-              "id": 5,
+              "id": 23,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "103:0:0"
+              "src": "329:0:0"
             },
-            "scope": 12,
-            "src": "82:76:0",
+            "scope": 30,
+            "src": "308:76:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 13,
-        "src": "27:134:0"
+        "scope": 31,
+        "src": "27:362:0"
       }
     ],
-    "src": "0:161:0"
+    "src": "0:389:0"
   },
   "legacyAST": {
-    "absolutePath": "/P/Dani/dappCart/marketplace/src/contracts/Marketplace.sol",
+    "absolutePath": "/P/Dani/dappCart/src/contracts/Marketplace.sol",
     "exportedSymbols": {
       "Marketplace": [
-        12
+        30
       ]
     },
-    "id": 13,
+    "id": 31,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -208,9 +491,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 12,
+        "id": 30,
         "linearizedBaseContracts": [
-          12
+          30
         ],
         "name": "Marketplace",
         "nodeType": "ContractDefinition",
@@ -220,7 +503,7 @@
             "id": 3,
             "name": "name",
             "nodeType": "VariableDeclaration",
-            "scope": 12,
+            "scope": 30,
             "src": "55:18:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -242,27 +525,259 @@
             "visibility": "public"
           },
           {
+            "constant": false,
+            "id": 6,
+            "name": "productCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 30,
+            "src": "80:27:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_int256",
+              "typeString": "int256"
+            },
+            "typeName": {
+              "id": 4,
+              "name": "int",
+              "nodeType": "ElementaryTypeName",
+              "src": "80:3:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_int256",
+                "typeString": "int256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 5,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "106:1:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 10,
+            "name": "products",
+            "nodeType": "VariableDeclaration",
+            "scope": 30,
+            "src": "114:40:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Product_$21_storage_$",
+              "typeString": "mapping(uint256 => struct Marketplace.Product)"
+            },
+            "typeName": {
+              "id": 9,
+              "keyType": {
+                "id": 7,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "122:4:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "114:24:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Product_$21_storage_$",
+                "typeString": "mapping(uint256 => struct Marketplace.Product)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 8,
+                "name": "Product",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 21,
+                "src": "130:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Product_$21_storage_ptr",
+                  "typeString": "struct Marketplace.Product"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Marketplace.Product",
+            "id": 21,
+            "members": [
+              {
+                "constant": false,
+                "id": 12,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 21,
+                "src": "193:7:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 11,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "193:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 14,
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 21,
+                "src": "211:11:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 13,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "211:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 16,
+                "name": "price",
+                "nodeType": "VariableDeclaration",
+                "scope": 21,
+                "src": "233:10:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 15,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "233:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 18,
+                "name": "owner",
+                "nodeType": "VariableDeclaration",
+                "scope": 21,
+                "src": "254:13:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 17,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "254:7:0",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 20,
+                "name": "purchased",
+                "nodeType": "VariableDeclaration",
+                "scope": 21,
+                "src": "278:14:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 19,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "278:4:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Product",
+            "nodeType": "StructDefinition",
+            "scope": 30,
+            "src": "167:133:0",
+            "visibility": "public"
+          },
+          {
             "body": {
-              "id": 10,
+              "id": 28,
               "nodeType": "Block",
-              "src": "103:55:0",
+              "src": "329:55:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 8,
+                    "id": 26,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 6,
+                      "id": 24,
                       "name": "name",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 3,
-                      "src": "114:4:0",
+                      "src": "340:4:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_string_storage",
                         "typeString": "string storage ref"
@@ -273,14 +788,14 @@
                     "rightHandSide": {
                       "argumentTypes": null,
                       "hexValue": "4461707020556e6976657273697479204d61726b6574706c616365",
-                      "id": 7,
+                      "id": 25,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "string",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "121:29:0",
+                      "src": "347:29:0",
                       "subdenomination": null,
                       "typeDescriptions": {
                         "typeIdentifier": "t_stringliteral_da4b6052d4e2657e92b9e8ac7ae34efe0016cdd765c6837ed00d7314b2dd8f36",
@@ -288,49 +803,49 @@
                       },
                       "value": "Dapp University Marketplace"
                     },
-                    "src": "114:36:0",
+                    "src": "340:36:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage",
                       "typeString": "string storage ref"
                     }
                   },
-                  "id": 9,
+                  "id": 27,
                   "nodeType": "ExpressionStatement",
-                  "src": "114:36:0"
+                  "src": "340:36:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 11,
+            "id": 29,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
             "name": "",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4,
+              "id": 22,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "93:2:0"
+              "src": "319:2:0"
             },
             "returnParameters": {
-              "id": 5,
+              "id": 23,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "103:0:0"
+              "src": "329:0:0"
             },
-            "scope": 12,
-            "src": "82:76:0",
+            "scope": 30,
+            "src": "308:76:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 13,
-        "src": "27:134:0"
+        "scope": 31,
+        "src": "27:362:0"
       }
     ],
-    "src": "0:161:0"
+    "src": "0:389:0"
   },
   "compiler": {
     "name": "solc",
@@ -340,12 +855,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x7611801B7416D9f1cf0e63D76E2e926Ce0dBA13B",
-      "transactionHash": "0x507694e448ec9dd953d7cba2ecdb51ec0a3b57bb7425a11968f8177df22fe010"
+      "address": "0x2Ca07D6bfd1d842F9D1B48ab3FC2AC4d5c38972a",
+      "transactionHash": "0xd43913f142074792752d74a3c68834a3a1c41e03553fd35ff6b0e1a174c92ff0"
     }
   },
   "schemaVersion": "3.0.2",
-  "updatedAt": "2021-10-20T02:05:12.223Z",
+  "updatedAt": "2021-10-21T02:35:55.833Z",
   "devdoc": {
     "methods": {}
   },
