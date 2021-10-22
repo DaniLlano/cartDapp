@@ -2,14 +2,14 @@ pragma solidity ^0.5.0;
 
 contract Marketplace {
     string public name;
-    int public productCount = 0;
+    uint public productCount = 0;
     mapping(uint => Product) public products;
     
     struct Product {
         uint id;
         string name;
         uint price;
-        address owner;
+        address payable owner;
         bool purchased;
     }
 
@@ -66,7 +66,7 @@ contract Marketplace {
         // update the product
         products[_id] = _product;
         // pay the seller by sending them Ether
-        address(_seller.transfer(msg.value));
+        address(_seller).transfer(msg.value);
         // trigger an event
         emit ProductPurchased(productCount, _product.name, _product.price, msg.sender, true);
     }

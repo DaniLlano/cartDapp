@@ -47,7 +47,7 @@ contract('Marketplace', ([deployer, seller, buyer]) => {
             assert.equal(event.purchased, false, 'purchased is correct')
 
             // failure: product must have a name
-            await await marketplace.createProduct('', web.utils.toWey('1', 'Ether'), { from: seller }).should.be.rejected;
+            await await marketplace.createProduct('', web3.utils.toWei('1', 'Ether'), { from: seller }).should.be.rejected;
             // failure: product must have a price
             await await marketplace.createProduct('iPhone X', 0, { from: seller }).should.be.rejected;
         })
@@ -55,14 +55,14 @@ contract('Marketplace', ([deployer, seller, buyer]) => {
         it('seller products', async () => {
             // track the seller balance before purchase
             let oldSellerBalance
-            oldSellerBalance = await Web3.eth.getBalance(seller)
-            oldSellerBalance = new Web3.utils.BN(oldSellerBalance)
+            oldSellerBalance = await web3.eth.getBalance(seller)
+            oldSellerBalance = new web3.utils.BN(oldSellerBalance)
 
             // success: buyer makes purchase
-            result = await marketplace.purchaseProduct(productCount, { from: buyer, value: Web3.utils.toWei('1', 'Ether')})
+            result = await marketplace.purchaseProduct(productCount, { from: buyer, value: web3.utils.toWei('1', 'Ether')})
 
             // chech logs
-            const event = results.logs[0].args
+            const event = result.logs[0].args
             assert.equal(event.id.toNumber(), productCount.toNumber(), 'id is correct')
             assert.equal(event.name, 'iPhone X', 'name is correct')
             assert.equal(event.price, '1000000000000000000', 'price is correct')
@@ -71,8 +71,8 @@ contract('Marketplace', ([deployer, seller, buyer]) => {
 
             // chech that seller received funds
             let newSellerBalance
-            newSellerBalance = await Web3.eth.getBalance(seller)
-            newSellerBalance = new Web3.utils.BN(newSellerBalance)
+            newSellerBalance = await web3.eth.getBalance(seller)
+            newSellerBalance = new web3.utils.BN(newSellerBalance)
 
             let price
             price = web3.utils.toWei('1', 'Ether')
