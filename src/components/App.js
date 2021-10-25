@@ -26,7 +26,7 @@ class App extends Component {
   async loadBlockchainData() {
     const web3 = window.web3
     // load account
-    const accounts = await web3.eth.getAccounts().
+    const accounts = await web3.eth.getAccounts()
     this.setState({ account: accounts[0] })
     const networkId = await web3.eth.net.getId()
     const networkData = Marketplace.networks[networkId]
@@ -64,6 +64,14 @@ class App extends Component {
   createProduct(name, price) {
     this.setState({ loading: true })
     this.state.marketplace.methods.createProduct(name, price).send({ from: this.state.account})
+    .once('receipt', (receipt) => {
+      this.setState({ loading: false })
+    })
+  }
+
+  purchaseProduct(id, price) {
+    this.setState({ loading: true})
+    this.state.marketplace.methods.purchaseProduct(id).send({ from: this.state.accound, value: price })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
